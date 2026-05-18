@@ -1,0 +1,184 @@
+@startuml AssetFlowLogicalER
+!pragma layout smetana
+hide circle
+top to bottom direction
+skinparam linetype ortho
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam nodesep 70
+skinparam ranksep 60
+skinparam class {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+}
+
+entity "Employee" as employee {
+  <&key> employee_no : varchar(16) <<PK>>
+  --
+  last_name : varchar(128)
+  first_name : varchar(128)
+  patronymic : varchar(128)
+  position : varchar(128)
+  department : varchar(128)
+  login : varchar(64)
+  password_hash : varchar(255)
+  role_id : bigint <<FK>>
+}
+
+entity "Role" as role {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(64)
+}
+
+entity "Asset" as asset {
+  <&key> inventory_no : varchar(32) <<PK>>
+  --
+  type_id : bigint <<FK>>
+  manufacturer : varchar(128)
+  model : varchar(256)
+  serial_number : varchar(128)
+  purchase_date : date
+  cost : numeric(12,2)
+  status_id : bigint <<FK>>
+  vendor_name : varchar(256)
+  receipt_act_no : varchar(32)
+}
+
+entity "Asset_Type" as asset_type {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(128)
+  default_useful_life_years : int
+  okof_code : varchar(32) <<FK>>
+}
+
+entity "Asset_Status" as asset_status {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(64)
+}
+
+entity "OKOF" as okof {
+  <&key> code : varchar(32) <<PK>>
+  --
+  name : varchar(256)
+  amortization_group_no : smallint <<FK>>
+}
+
+entity "Amortization_Group" as amortization_group {
+  <&key> group_no : smallint <<PK>>
+  --
+  description : varchar(200)
+  min_useful_life_months : int
+  max_useful_life_months : int
+}
+
+entity "Software" as software {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(256)
+  version : varchar(64)
+  license_type_id : bigint <<FK>>
+  license_identifier : varchar(256)
+  license_start : date
+  license_end : date
+  license_status_id : bigint <<FK>>
+}
+
+entity "License_Type" as license_type {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(64)
+}
+
+entity "License_Status" as license_status {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(64)
+}
+
+entity "Software_Installation" as software_installation {
+  <&key> id : bigint <<PK>>
+  --
+  asset_inventory_no : varchar(32) <<FK>>
+  software_id : bigint <<FK>>
+  installed_at : timestamp
+  installed_version : varchar(64)
+  updated_at : timestamp
+}
+
+entity "Ticket" as ticket {
+  <&key> ticket_no : varchar(32) <<PK>>
+  --
+  type : varchar(128)
+  category : varchar(128)
+  author_employee_no : varchar(16) <<FK>>
+  assignee_employee_no : varchar(16) <<FK>>
+  asset_inventory_no : varchar(32) <<FK>>
+  software_id : bigint <<FK>>
+  target_software_version : varchar(64)
+  justification : text
+  comment : text
+  created_at : timestamp
+  closed_at : timestamp
+  status_id : bigint <<FK>>
+}
+
+entity "Ticket_Status" as ticket_status {
+  <&key> id : bigint <<PK>>
+  --
+  name : varchar(64)
+}
+
+entity "Asset_Movement_Act" as asset_movement_act {
+  <&key> act_no : varchar(32) <<PK>>
+  --
+  asset_inventory_no : varchar(32) <<FK>>
+  employee_no : varchar(16) <<FK>>
+  movement_type : varchar(16)
+  movement_date : date
+  actor_employee_no : varchar(16) <<FK>>
+  related_act_no : varchar(32) <<FK>>
+}
+
+entity "Asset_Write_Off_Act" as asset_write_off_act {
+  <&key> act_no : varchar(32) <<PK>>
+  --
+  asset_inventory_no : varchar(32) <<FK>>
+  reason : varchar(128)
+  write_off_date : date
+}
+
+role -[hidden]right- asset_status
+asset_status -[hidden]right- asset_type
+asset_type -[hidden]right- license_status
+license_status -[hidden]right- license_type
+employee -[hidden]right- ticket
+ticket -[hidden]right- asset
+asset -[hidden]right- software
+asset_movement_act -[hidden]right- asset_write_off_act
+asset_write_off_act -[hidden]right- software_installation
+
+role ||--o{ employee
+asset_type ||--o{ asset
+asset_status ||--o{ asset
+okof |o--o{ asset_type
+amortization_group ||--o{ okof
+license_type ||--o{ software
+license_status ||--o{ software
+asset ||--o{ software_installation
+software ||--o{ software_installation
+employee ||--o{ ticket
+employee |o--o{ ticket
+asset |o--o{ ticket
+software |o--o{ ticket
+ticket_status ||--o{ ticket
+asset ||--o{ asset_movement_act
+employee ||--o{ asset_movement_act
+employee |o--o{ asset_movement_act
+asset_movement_act |o--o| asset_movement_act
+asset ||--o| asset_write_off_act
+
+@enduml

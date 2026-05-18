@@ -1,0 +1,2 @@
+ALTER TABLE asset ADD COLUMN vendor_name VARCHAR(256);
+ALTER TABLE asset ADD COLUMN receipt_act_no VARCHAR(32);

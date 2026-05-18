@@ -1,0 +1,94 @@
+@startuml AssetFlowProcessTicketSequence
+hide footbox
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantPadding 25
+skinparam BoxPadding 10
+
+title Обработка и закрытие заявки IT-специалистом
+
+actor "IT-специалист" as Specialist
+boundary "Клиентская часть" as Client
+control "Контроллер заявок" as TicketController
+control "Компонент безопасности" as Security
+control "Сервис заявок" as TicketService
+control "Сервис уведомлений" as NotificationService
+control "Сервис аудита" as AuditService
+database "База данных" as DB
+
+Specialist -> Client: Открывает список заявок
+Client -> TicketController: POST /tickets/{номер}/assign-to-me\nJWT
+TicketController -> Security: Определить исполнителя
+Security --> TicketController: Табельный номер и роль
+TicketController -> TicketService: Назначить заявку текущему исполнителю
+activate TicketService
+TicketService -> DB: Загрузить заявку и текущий статус
+
+alt Заявка закрыта или создана этим же пользователем
+    DB --> TicketService: Ограничение нарушено
+    TicketService --> TicketController: Ошибка бизнес-правила
+    TicketController --> Client: Сообщение об ошибке
+    Client --> Specialist: Отображение причины отказа
+else Назначение допустимо
+    DB --> TicketService: Заявка доступна для назначения
+    TicketService -> DB: Установить исполнителя\nи статус "В работе"
+    TicketService -> NotificationService: Уведомить автора заявки
+    NotificationService -> DB: Сохранить уведомление
+    TicketService -> AuditService: Зафиксировать назначение
+    AuditService -> DB: Сохранить запись журнала
+    TicketService --> TicketController: Обновленная заявка
+    TicketController --> Client: Результат назначения
+    Client --> Specialist: Заявка отображается в работе
+end
+
+deactivate TicketService
+
+Specialist -> Client: Указывает итоговый статус и комментарий
+Client -> TicketController: POST /tickets/{номер}/status\nстатус, комментарий, JWT
+TicketController -> Security: Определить текущего пользователя
+Security --> TicketController: Табельный номер и роль
+TicketController -> TicketService: Изменить статус заявки
+activate TicketService
+TicketService -> DB: Загрузить заявку и проверить переход статуса
+
+alt Переход статуса недопустим
+    DB --> TicketService: Текущий статус не допускает переход
+    TicketService --> TicketController: Ошибка бизнес-правила
+    TicketController --> Client: Сообщение об ошибке
+    Client --> Specialist: Отображение причины отказа
+else Переход допустим
+    TicketService -> DB: Обновить статус, комментарий\nи дату закрытия при завершении
+
+    opt Заявка на установку или обновление ПО выполнена
+        TicketService -> DB: Проверить ПО, лицензию\nи текущие установки
+        alt Установка или обновление невозможны
+            DB --> TicketService: Нарушение ограничения
+            TicketService --> TicketController: Ошибка бизнес-правила
+            TicketController --> Client: Сообщение об ошибке
+            Client --> Specialist: Отображение причины отказа
+        else Условия выполнены
+            TicketService -> DB: Создать или обновить установку ПО
+            TicketService -> NotificationService: Уведомить владельца оборудования
+            NotificationService -> DB: Сохранить уведомление
+            TicketService -> AuditService: Зафиксировать операцию с ПО
+            AuditService -> DB: Сохранить запись журнала
+        end
+    end
+
+    opt Закрыта заявка на ремонт оборудования
+        TicketService -> DB: Обновить статус оборудования\nс учетом факта выдачи сотруднику
+    end
+
+    TicketService -> NotificationService: Уведомить автора об изменении статуса
+    NotificationService -> DB: Сохранить уведомление
+    TicketService -> AuditService: Зафиксировать изменение статуса
+    AuditService -> DB: Сохранить запись журнала
+    TicketService --> TicketController: Обновленная заявка
+    TicketController --> Client: Результат обработки
+    Client --> Specialist: Отображение нового состояния заявки
+end
+
+deactivate TicketService
+@enduml

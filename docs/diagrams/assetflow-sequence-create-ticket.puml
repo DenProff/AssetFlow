@@ -1,0 +1,53 @@
+@startuml AssetFlowCreateTicketSequence
+hide footbox
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantPadding 25
+skinparam BoxPadding 10
+
+title Создание заявки сотрудником
+
+actor "Сотрудник" as User
+boundary "Клиентская часть" as Client
+control "Контроллер заявок" as TicketController
+control "Компонент безопасности" as Security
+control "Сервис заявок" as TicketService
+control "Сервис нумерации" as SequenceService
+control "Сервис уведомлений" as NotificationService
+control "Сервис аудита" as AuditService
+database "База данных" as DB
+
+User -> Client: Заполняет форму заявки
+Client -> TicketController: POST /tickets\nданные заявки, JWT
+TicketController -> Security: Определить текущего пользователя
+Security --> TicketController: Табельный номер и роль
+TicketController -> TicketService: Создать заявку от имени пользователя
+activate TicketService
+TicketService -> DB: Проверить связанное оборудование\nи программное обеспечение
+
+alt Оборудование списано или данные некорректны
+    DB --> TicketService: Нарушение ограничения
+    TicketService --> TicketController: Ошибка бизнес-правила
+    TicketController --> Client: Сообщение об ошибке
+    Client --> User: Отображение причины отказа
+else Проверка пройдена
+    DB --> TicketService: Связанные данные найдены
+    TicketService -> DB: Получить статус "Новая"
+    TicketService -> SequenceService: Сформировать номер заявки
+    SequenceService -> DB: Обновить счетчик заявок
+    DB --> SequenceService: Следующий номер
+    SequenceService --> TicketService: Номер заявки
+    TicketService -> DB: Сохранить заявку со статусом "Новая"
+    TicketService -> NotificationService: Создать уведомления автору\nи IT-ролям
+    NotificationService -> DB: Сохранить уведомления
+    TicketService -> AuditService: Зафиксировать создание заявки
+    AuditService -> DB: Сохранить запись журнала
+    TicketService --> TicketController: Созданная заявка
+    TicketController --> Client: Данные заявки
+    Client --> User: Отображение созданной заявки
+end
+
+deactivate TicketService
+@enduml

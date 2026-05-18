@@ -1,0 +1,259 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram id="assetflow-component-diagram" name="Диаграмма компонентов AssetFlow">
+    <mxGraphModel dx="1303" dy="903" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1460" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontStyle=1;fontSize=16;" value="UML-диаграмма компонентов информационной системы AssetFlow" vertex="1">
+          <mxGeometry height="830" width="880" x="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-1" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;" value="Сервисный слой" vertex="1">
+          <mxGeometry height="370" width="620" x="230.5" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-2" parent="Nuboa1TQ4FVquoyyXn4L-1" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="browser" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Веб-браузер&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="155" x="120.5" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="browser-icon" parent="browser" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="browser-port" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="266.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="client" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Клиентское&lt;/span&gt;&lt;div&gt;&lt;span&gt;приложение&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="105" width="190" x="375.5" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="client-icon" parent="client" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="client-port-in" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="366.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="client-port-out" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="556.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-api" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;REST API&lt;br&gt;контроллеры&lt;/span&gt;" vertex="1">
+          <mxGeometry height="105" width="190" x="660.5" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-api-icon" parent="rest-api" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rest-port-in" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="651.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="rest-port-out" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="745.5" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0;spacingBottom=-5;" value="&lt;span&gt;Аутентификация&lt;br&gt;и авторизация&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="256.5" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-icon" parent="auth" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="equipment" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Учёт&lt;br&gt;оборудования&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="456.5" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="equipment-icon" parent="equipment" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="software" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Учёт ПО&lt;br&gt;и лицензий&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="656.5" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="software-icon" parent="software" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tickets" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Обработка&lt;br&gt;заявок&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="256.5" y="503" as="geometry" />
+        </mxCell>
+        <mxCell id="tickets-icon" parent="tickets" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="acts" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Акты&lt;br&gt;перемещения и списания&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="656.5" y="503" as="geometry" />
+        </mxCell>
+        <mxCell id="acts-icon" parent="acts" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="employees" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Сотрудники&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="256.5" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="employees-icon" parent="employees" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="notifications" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Уведомления&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="456.5" y="393" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications-icon" parent="notifications" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="audit" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Аудит&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="656.5" y="393" as="geometry" />
+        </mxCell>
+        <mxCell id="audit-icon" parent="audit" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="analytics" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Аналитика&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="155" x="456.5" y="503" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics-icon" parent="analytics" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="repositories" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="&lt;span&gt;Репозитории&lt;br&gt;и доступ к данным&lt;/span&gt;" vertex="1">
+          <mxGeometry height="105" width="190" x="655" y="695.5" as="geometry" />
+        </mxCell>
+        <mxCell id="repositories-icon" parent="repositories" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="repo-port-in" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="741" y="686.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iface-web" parent="frame" style="ellipse;html=1;shape=ellipse;aspect=fixed;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="314.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="iface-rest" parent="frame" style="ellipse;html=1;shape=ellipse;aspect=fixed;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="606.5" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="label-web" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=14;" value="IWebUI" vertex="1">
+          <mxGeometry height="25" width="75" x="284.5" y="129" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rest" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" value="IRestAPI" vertex="1">
+          <mxGeometry height="25" width="75" x="574.5" y="129" as="geometry" />
+        </mxCell>
+        <mxCell id="label-service" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" value="IService" vertex="1">
+          <mxGeometry height="25" width="75" x="670.5" y="193" as="geometry" />
+        </mxCell>
+        <mxCell id="label-data" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" value="IDataAccess" vertex="1">
+          <mxGeometry height="25" width="90" x="646" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="label-db" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=15;" value="IDatabase" vertex="1">
+          <mxGeometry height="25" width="90" x="561.5" y="713" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-browser-web" edge="1" parent="frame" source="browser-port" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=halfCircle;endFill=0;endSize=6;strokeWidth=1;sketch=0;strokeColor=#111827;" target="iface-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-client-web" edge="1" parent="frame" source="client-port-in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="iface-web">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360.5" y="114" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-client-rest" edge="1" parent="frame" source="client-port-out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=halfCircle;endFill=0;endSize=6;strokeWidth=1;sketch=0;strokeColor=#111827;" target="iface-rest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-rest-interface" edge="1" parent="frame" source="rest-port-in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;" target="iface-rest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-3" parent="frame" style="shape=providedRequiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;direction=north;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="744.5" y="193" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-4" edge="1" parent="frame" source="rest-port-out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="Nuboa1TQ4FVquoyyXn4L-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="713.5" y="224" as="sourcePoint" />
+            <mxPoint x="670.5" y="224" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-5" edge="1" parent="frame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="754.7" y="223" />
+              <mxPoint x="754.7" y="223" />
+            </Array>
+            <mxPoint x="754.4000000000001" y="213" as="sourcePoint" />
+            <mxPoint x="754.4000000000001" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-6" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="745.5" y="233" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-7" parent="frame" style="shape=providedRequiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;direction=north;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="740" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-35" edge="1" parent="frame" source="Nuboa1TQ4FVquoyyXn4L-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-10" parent="frame" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=13;spacingLeft=0;spacingRight=-8;" value="Пользователи" vertex="1">
+          <mxGeometry height="60" width="30" x="30" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-16" edge="1" parent="frame" source="Nuboa1TQ4FVquoyyXn4L-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="749.5" y="632" as="sourcePoint" />
+            <mxPoint x="749.5" y="611" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-18" edge="1" parent="frame" source="Nuboa1TQ4FVquoyyXn4L-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" target="Nuboa1TQ4FVquoyyXn4L-17" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="889.5" y="653" as="sourcePoint" />
+            <mxPoint x="889.5" y="632" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-17" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="741" y="604" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-19" edge="1" parent="frame" source="repo-port-in" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#111827;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" target="Nuboa1TQ4FVquoyyXn4L-7" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="683" as="sourcePoint" />
+            <mxPoint x="750" y="673" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-22" parent="frame" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=14;" value="Сервисный слой" vertex="1">
+          <mxGeometry height="30" width="134.25" x="466.88" y="249" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-24" parent="frame" style="html=1;dropTarget=0;whiteSpace=wrap;fontSize=14;align=center;verticalAlign=middle;fontStyle=0" value="База данных" vertex="1">
+          <mxGeometry height="105" width="155" x="401.5" y="696.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-25" parent="Nuboa1TQ4FVquoyyXn4L-24" style="shape=module;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-26" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;flipH=0;legacyAnchorPoints=0;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="547.5" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-32" edge="1" parent="frame" source="Nuboa1TQ4FVquoyyXn4L-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="repositories" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-27" parent="frame" style="shape=providedRequiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;direction=east;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="595.25" y="738" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-31" parent="frame" style="html=1;fillColor=#ffffff;strokeColor=#111827;flipH=0;legacyAnchorPoints=0;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="646" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="Nuboa1TQ4FVquoyyXn4L-34" edge="1" parent="frame" source="Nuboa1TQ4FVquoyyXn4L-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Nuboa1TQ4FVquoyyXn4L-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="749.5" as="sourcePoint" />
+            <mxPoint x="600" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

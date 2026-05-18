@@ -1,0 +1,9 @@
+package com.itam.persistence;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface AssetTypeRepository extends JpaRepository<AssetTypeEntity, Long> {
+    Optional<AssetTypeEntity> findByName(String name);
+}

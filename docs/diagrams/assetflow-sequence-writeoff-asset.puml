@@ -1,0 +1,64 @@
+@startuml AssetFlowWriteOffAssetSequence
+hide footbox
+autonumber
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam ParticipantPadding 25
+skinparam BoxPadding 10
+
+title Списание оборудования
+
+actor "IT-менеджер" as Manager
+boundary "Клиентская часть" as Client
+control "Контроллер актов" as ActController
+control "Компонент безопасности" as Security
+control "Сервис актов" as ActService
+control "Сервис нумерации" as SequenceService
+control "Сервис аудита" as AuditService
+database "База данных" as DB
+
+Manager -> Client: Выбирает оборудование\nи указывает причину списания
+Client -> ActController: POST /acts/writeoff\nинвентарный номер, причина, дата, JWT
+ActController -> Security: Проверить пользователя и роль
+Security --> ActController: Пользователь имеет роль IT-менеджера
+ActController -> ActService: Выполнить списание оборудования
+activate ActService
+ActService -> DB: Загрузить оборудование\nи статус "Списано"
+
+alt Оборудование уже списано
+    DB --> ActService: Статус уже "Списано"
+    ActService --> ActController: Ошибка бизнес-правила
+    ActController --> Client: Сообщение об ошибке
+    Client --> Manager: Отображение причины отказа
+else Есть открытый акт выдачи
+    ActService -> DB: Проверить открытые акты перемещения
+    DB --> ActService: Найден открытый акт выдачи
+    ActService --> ActController: Требуется возврат оборудования
+    ActController --> Client: Сообщение об ошибке
+    Client --> Manager: Отображение причины отказа
+else Списание допустимо
+    DB --> ActService: Оборудование найдено
+    ActService -> DB: Установить статус "Списано"
+    ActService -> DB: Найти установки ПО на оборудовании
+
+    opt Установки ПО найдены
+        ActService -> DB: Удалить связанные установки ПО
+        ActService -> AuditService: Зафиксировать удаление установок ПО
+        AuditService -> DB: Сохранить запись журнала
+    end
+
+    ActService -> SequenceService: Сформировать номер акта ОС-4
+    SequenceService -> DB: Обновить счетчик актов списания
+    DB --> SequenceService: Следующий номер
+    SequenceService --> ActService: Номер акта ОС-4
+    ActService -> DB: Сохранить акт списания
+    ActService -> AuditService: Зафиксировать списание оборудования
+    AuditService -> DB: Сохранить запись журнала
+    ActService --> ActController: Созданный акт списания
+    ActController --> Client: Данные акта
+    Client --> Manager: Отображение результата списания
+end
+
+deactivate ActService
+@enduml

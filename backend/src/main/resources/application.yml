@@ -1,0 +1,51 @@
+server:
+  # HTTP-порт, на котором Spring Boot backend принимает запросы от frontend
+  port: 8081
+
+spring:
+  application:
+    name: AssetFlow
+  datasource:
+    # Подключение к PostgreSQL настраивается через переменные окружения
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://127.0.0.1:5432/itam?sslmode=disable}
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:itam}
+    password: ${SPRING_DATASOURCE_PASSWORD:itam}
+  jpa:
+    hibernate:
+      # Hibernate только проверяет соответствие Entity существующей схеме БД, таблицы создаёт Flyway
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    validate-on-migrate: false
+  jackson:
+    serialization:
+      # Даты в JSON возвращаются как строки
+      write-dates-as-timestamps: false
+
+app:
+  jwt:
+    # Настройки JWT-токенов - issuer попадает в токен, TTL задаёт срок жизни access/refresh токенов
+    issuer: assetflow
+    accessTokenTtlMinutes: 30
+    refreshTokenTtlDays: 14
+    secret: ${JWT_SECRET}
+
+logging:
+  charset:
+    console: UTF-8
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://127.0.0.1:5432/itam?sslmode=disable}
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:itam}
+    password: ${SPRING_DATASOURCE_PASSWORD:itam}

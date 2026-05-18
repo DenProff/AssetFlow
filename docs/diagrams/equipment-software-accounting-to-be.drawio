@@ -1,0 +1,208 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram id="equipment-software-accounting-to-be" name="Учет оборудования и ПО TO BE">
+    <mxGraphModel dx="2084" dy="1444" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1320" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool" parent="1" style="swimlane;html=1;horizontal=1;startSize=34;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontStyle=1;fontSize=16;" value="Учет оборудования и программного обеспечения TO BE" vertex="1">
+          <mxGeometry height="760" width="1260" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-acc" parent="pool" style="swimlane;html=1;horizontal=0;startSize=40;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontSize=13;" value="Бухгалтерия" vertex="1">
+          <mxGeometry height="100" width="1260" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="lane-acc" style="ellipse;html=1;shape=ellipse;aspect=fixed;fillColor=#ffffff;strokeColor=#111827;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="47" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="acc1" parent="lane-acc" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Передать сведения о поступлении оборудования или ПО" vertex="1">
+          <mxGeometry height="64" width="95" x="98" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="acc2" parent="lane-acc" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Получить отчетные сведения или документы" vertex="1">
+          <mxGeometry height="64" width="90" x="1080" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-emp" parent="pool" style="swimlane;html=1;horizontal=0;startSize=40;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontSize=13;" value="Сотрудник" vertex="1">
+          <mxGeometry height="105" width="1260" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="emp1" parent="lane-emp" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Сообщить о потребности в оборудовании или ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="590" y="22" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-it" parent="pool" style="swimlane;html=1;horizontal=0;startSize=40;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontSize=13;" value="IT-специалист" vertex="1">
+          <mxGeometry height="160" width="1260" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="it1" parent="lane-it" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Внести сведения в AssetFlow" vertex="1">
+          <mxGeometry height="60" width="90" x="220" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g1-label" parent="lane-it" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=11;" value="Требуется выдача или установка?" vertex="1">
+          <mxGeometry height="30" width="90" x="500" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" parent="lane-it" style="rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=24;fontStyle=0;" value="×" vertex="1">
+          <mxGeometry height="50" width="50" x="520" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="it2" parent="lane-it" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Выбрать сотрудника и оборудование или ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="700" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="it3" parent="lane-it" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Выдать оборудование или установить ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="890" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="it4" parent="lane-it" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Сообщить сотруднику о невозможности выполнения" vertex="1">
+          <mxGeometry height="60" width="100" x="890" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-system" parent="pool" style="swimlane;html=1;horizontal=0;startSize=40;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontSize=13;" value="AssetFlow" vertex="1">
+          <mxGeometry height="245" width="1260" y="399" as="geometry" />
+        </mxCell>
+        <mxCell id="sys1" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Создать карточку оборудования или запись ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="330" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sys2" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Присвоить статус и сохранить историю" vertex="1">
+          <mxGeometry height="60" width="95" x="445" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sys3" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Проверить доступность оборудования или лицензии" vertex="1">
+          <mxGeometry height="60" width="100" x="700" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g2-label" parent="lane-system" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=11;" value="Оборудование или ПО доступно?" vertex="1">
+          <mxGeometry height="30" width="90" x="810" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" parent="lane-system" style="rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=24;fontStyle=0;" value="×" vertex="1">
+          <mxGeometry height="50" width="50" x="840" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="sys4" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Зафиксировать движение или установку ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="930" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sys5" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Обновить статус, держателя и историю" vertex="1">
+          <mxGeometry height="60" width="95" x="1040" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sys6" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Сформировать акт ОС-2 при выдаче оборудования" vertex="1">
+          <mxGeometry height="60" width="95" x="1040" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="sys7" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Хранить актуальные сведения об оборудовании и ПО" vertex="1">
+          <mxGeometry height="60" width="95" x="625" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="sys8" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Предоставить отчетные данные" vertex="1">
+          <mxGeometry height="60" width="95" x="930" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="sys9" parent="lane-system" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11;" value="Показать отсутствие доступного оборудования или лицензии" vertex="1">
+          <mxGeometry height="60" width="100" x="930" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="lane-system" style="ellipse;html=1;shape=ellipse;aspect=fixed;fillColor=#ffffff;strokeColor=#111827;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1190" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="lane-system" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;fontSize=12;" value="Голубым цветом выделены&lt;div&gt;автоматизированные операции&lt;/div&gt;&lt;div&gt;системы AssetFlow&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="20" x="70" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-edge" edge="1" parent="lane-system" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" target="sys1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="170" as="sourcePoint" />
+            <mxPoint x="330" y="85" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lane-mgr" parent="pool" style="swimlane;html=1;horizontal=0;startSize=40;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffffff;strokeColor=#111827;fontSize=13;" value="IT-менеджер" vertex="1">
+          <mxGeometry height="116" width="1260" y="644" as="geometry" />
+        </mxCell>
+        <mxCell id="mgr1" parent="lane-mgr" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Сформировать отчет в AssetFlow" vertex="1">
+          <mxGeometry height="60" width="95" x="780" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mgr2" parent="lane-mgr" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;fontSize=11;" value="Изучить актуальные сведения" vertex="1">
+          <mxGeometry height="60" width="90" x="1080" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="pool" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;" target="acc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="pool" source="acc1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="it1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="pool" source="it1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sys1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="319" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="pool" source="sys1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;" target="sys2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="pool" source="sys2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="g1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="pool" source="g1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="emp1" value="Да">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="pool" source="emp1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="it2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="pool" source="it2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sys3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="pool" source="sys3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;" target="g2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="pool" source="g2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;fontSize=12;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="it3" value="Да">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="pool" source="g2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;fontSize=12;" target="sys9" value="Нет">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="pool" source="it3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sys4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="pool" source="sys4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;" target="sys5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="pool" source="sys5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sys6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="pool" source="sys6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="sys7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1088" y="640" />
+              <mxPoint x="673" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="pool" source="sys9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="it4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge18" edge="1" parent="pool" source="it4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sys7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1225" y="364" />
+              <mxPoint x="1225" y="650" />
+              <mxPoint x="720" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge19" edge="1" parent="pool" source="g1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sys7" value="Нет">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="500" />
+              <mxPoint x="673" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge20" edge="1" parent="pool" source="sys7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="mgr1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="673" y="660" />
+              <mxPoint x="828" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge21" edge="1" parent="pool" source="mgr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="sys8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge22" edge="1" parent="pool" source="sys8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="mgr2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge23" edge="1" parent="pool" source="mgr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="acc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge24" edge="1" parent="pool" source="acc2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#111827;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1245" y="52" />
+              <mxPoint x="1245" y="549" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
